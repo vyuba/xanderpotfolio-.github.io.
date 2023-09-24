@@ -1,0 +1,239 @@
+*{
+    margin: 0;
+    padding: 0;
+    
+}
+@font-face {
+        src: url(font/Dosis/Dosis-VariableFont_wght.ttf);
+        font-family: Dosis;
+    }
+
+@font-face {
+    font-family: pk;
+    src: url(font/planet_kosmos/PLANK___.TTF);
+}
+/*header*/
+
+header{
+    width: 100%;
+    height: auto;
+    background-color: black;
+}
+
+.navbar{
+    width: 100%;
+    height: 78px;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+nav h1{
+    margin:40px 0 0 40px ;
+    float: left;
+    color: #FFF;
+    font-family: Dosis;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 18px; /* 100% */
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+nav ul{
+    width: 400px;
+    height: 25px;
+    display: flex;
+    margin-top: 40px;
+}
+
+.navbarlinks li{
+    width: fit-content;
+    height: fit-content;    
+}
+
+.navbarlinks a{
+    display: block;
+    color: #FFF;
+    text-align: right;
+    font-family: Dosis;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: bold;
+    line-height: 13px; /* 100% */
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    list-style: none;
+    margin: 0 1.26em;
+    padding: 0.618em;
+    text-decoration: none;
+    animation: glow 1s ease-out  infinite normal forwards;
+}
+
+.hamburger{
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 25px;
+    height: 25px;
+}
+
+.hamburger .line{
+    width: 100%;
+    height: 3px;
+    border-radius: 10px;
+    background-color: #fff;
+    margin-bottom: 6px;
+}
+
+
+@keyframes glow{
+    100%{
+        text-shadow: 10px #FFF;
+    }
+}
+/*hover*/
+
+nav ul li a:hover{
+    color: rgb(45, 43, 43);
+    text-shadow: 5px #FFF;
+}
+
+/*continue*/
+.header-video{
+    width: 100%;
+    height: auto;
+    display: block;
+    justify-content: center;
+    align-items: center;
+}
+
+.header-video .video{
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: auto;
+    padding-top: 170px;
+}
+
+.brand{
+    color: #FFF;
+    font-family: pk;
+    font-size: 150px;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    padding-bottom: 100px;
+}
+
+footer{
+    width: 100%;
+    height: 300px;
+    background-color: rgb(20, 19, 19);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+footer article{
+    margin: auto;
+    background-color: #FFF;
+    width: 27px;
+    height: 27px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+footer article img{
+    margin-top: 5px;
+    width: 15px;
+    height: 15px;
+}
+/*resonsive*/
+
+@media screen and (max-width: 700px){
+
+        .navbar{
+        height: 50px;
+        flex-direction: column;
+        align-items: flex-start;
+        }
+
+        .navbar.active{
+            height: 100%;
+        }
+
+
+        nav h1{
+        margin:20px 0 0 20px ;
+        font-size: 18px;
+        font-weight: 600;
+        line-height: 18px; /* 100% */
+}
+
+    nav  ul{
+        width: 100%;
+        height: auto;
+        margin-top: 0;
+        flex-direction: column;
+    }
+
+
+    .navbarlinks{
+    display: none ;
+    width: 100%;
+    height: auto;
+    float: left;
+}
+
+    .navbarlinks li{
+       text-align: right;
+    }
+
+    .navbarlinks.active{
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        margin-bottom: 1000px;
+    }
+
+   .navbarlinks a{
+    width: fit-content;
+    margin: 10px 0 5px 10px;
+   }
+
+   .hamburger{
+    display: flex;
+   }
+
+
+    .header-video video{
+    display: block;
+    width: 100%;
+    height: auto;
+    margin: auto;
+    position: center;
+    padding-top: 100px;
+}
+
+    .brand{
+    font-size: 60px;
+    width: 100%;
+    height: auto;
+}
+
+    footer{
+    height: 200px;
+}
+}
