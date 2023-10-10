@@ -1,7 +1,17 @@
 *{
     margin: 0;
     padding: 0;
-    
+    box-sizing: border-box;
+}
+
+body{
+    width: 100%;
+    background-color: #FFF;
+}
+
+@font-face {
+    font-family: rubik;
+    src: url(font/Rubik/static/Rubik-Light.ttf);
 }
 @font-face {
         src: url(font/Dosis/Dosis-VariableFont_wght.ttf);
@@ -23,14 +33,15 @@ header{
 .navbar{
     width: 100%;
     height: 78px;
+    padding-bottom: 170px;
     background-color: black;
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
-nav h1{
-    margin:40px 0 0 40px ;
+.xander{
+    margin: 70px 0 0 40px ;
     float: left;
     color: #FFF;
     font-family: Dosis;
@@ -46,12 +57,13 @@ nav ul{
     width: 400px;
     height: 25px;
     display: flex;
-    margin-top: 40px;
+    margin-top: 70px;
 }
 
 .navbarlinks li{
     width: fit-content;
-    height: fit-content;    
+    height: fit-content;
+    float: left;    
 }
 
 .navbarlinks a{
@@ -70,6 +82,64 @@ nav ul{
     padding: 0.618em;
     text-decoration: none;
     animation: glow 1s ease-out  infinite normal forwards;
+    cursor: pointer;
+}
+
+.sidebar{
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 100%;
+    z-index: 999;
+    flex-direction: column;
+    background-color: rgb(32, 31, 31);
+    backdrop-filter: blur(10px);
+    box-shadow: -10px 0 10px rgb(0, 0, 0, 0.1);
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    display: none;
+    list-style-type: none;
+}
+
+.sidebar > li{
+    letter-spacing: 3px;
+    margin: 10px 0 0 25px;
+}
+
+.sidebar > li > a{
+    color: #FFF;
+    font-family: dosis;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: lighter;
+    text-transform: uppercase;
+    list-style: none;
+    animation: glow 1s ease-out  infinite normal forwards;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.hamburger-close{
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    display: block;
+    width: 25px;
+    height: 25px;
+    background-color: #fff;
+}
+
+.first-line{
+    background-color: #fff;
+    transform: rotate(45deg);
+}
+
+.sec-line{
+    background-color: #fff;
+    transform: rotate(-45deg);
 }
 
 .hamburger{
@@ -103,6 +173,7 @@ nav ul{
 nav ul li a:hover{
     color: rgb(45, 43, 43);
     text-shadow: 5px #FFF;
+    cursor: pointer;
 }
 
 /*continue*/
@@ -119,7 +190,6 @@ nav ul li a:hover{
     height: auto;
     display: block;
     margin: auto;
-    padding-top: 170px;
 }
 
 .brand{
@@ -132,6 +202,7 @@ nav ul li a:hover{
     align-items: center;
     width: 100%;
     height: auto;
+    padding-top: 100px;
     padding-bottom: 100px;
 }
 
@@ -163,50 +234,40 @@ footer article img{
 /*resonsive*/
 
 @media screen and (max-width: 700px){
-
         .navbar{
         height: 50px;
         flex-direction: column;
         align-items: flex-start;
+        position: ;
+        padding-bottom: 0;
+        background-color: rgb(32, 31, 31);
         }
 
-        .navbar.active{
-            height: 100%;
-        }
-
-
-        nav h1{
+        .xander{
         margin:20px 0 0 20px ;
         font-size: 18px;
         font-weight: 600;
         line-height: 18px; /* 100% */
-}
+        }
 
-    nav  ul{
+        nav  ul{
         width: 100%;
         height: auto;
         margin-top: 0;
         flex-direction: column;
-    }
+        }
 
 
-    .navbarlinks{
-    display: none ;
-    width: 100%;
-    height: auto;
-    float: left;
-}
+        .navbarlinks{
+        display: none ;
+        width: 100%;
+        height: auto;
+        float: left;
+        }
 
-    .navbarlinks li{
+        .navbarlinks li{
        text-align: right;
-    }
-
-    .navbarlinks.active{
-        display: flex;
-        flex-direction: column;
-        height: 100%;
-        margin-bottom: 1000px;
-    }
+        }
 
    .navbarlinks a{
     width: fit-content;
@@ -225,15 +286,198 @@ footer article img{
     margin: auto;
     position: center;
     padding-top: 100px;
-}
+    }
 
     .brand{
     font-size: 60px;
     width: 100%;
     height: auto;
+    }
+
+    .grid{
+    flex-direction: column;
+    }
+
+    .grid-item{
+    width: 100%;
 }
 
+.grid-item > video{
+    width: 100%;
+} 
+    
     footer{
-    height: 200px;
+        height: 200px;
+    }
 }
+
+/*stying for films*/
+
+.box{
+    background-color: #FFF;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 5px 5px 10px;
+}
+
+.grid{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.grid-item{
+    display: flex;
+    flex-direction: column;
+}
+
+.grid-item video{
+    width: 100%;
+    padding: 2px 5px 2px 0;
+} 
+
+.title{
+    display: inline-block;
+    flex-direction: column-reverse;
+}
+
+/*about page*/
+.container-about{
+    width: 100%;
+    background-color: #FFF;
+    padding-top: 100px;
+    padding-bottom: 70px;
+}
+
+.aboutme{
+    line-height: 35px;
+    text-align: center;
+    font-family: rubik;
+    color: rgb(56, 54, 54);
+}
+
+.booking-us{
+    text-align: center;
+    padding-top: 80px;
+    text-transform: uppercase;
+    font-family: rubik;
+    font-weight: 600;
+}
+
+.email{
+    text-align: center;
+    padding-top: 20px;
+    font-family: rubik;
+    color: rgb(56, 54, 54);
+}
+
+.form-container2{
+    width: 100%;
+    height: fit-content;
+    background-color: #FFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form2{
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    gap: 7px;
+    justify-content: center;
+    font-family: rubik;
+    text-transform: capitalize;
+    font-size: 13px;
+}
+
+.input-group1{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.input-group1 > input{
+    height: 46px;
+    border-color: #A9A9A9;
+    border-width: 1px;
+}
+
+.form-container{
+    width: 100%;
+    height: 20rem;
+    background-color: #FFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    font-family: rubik;
+    text-transform: lowercase;
+    font-size: 12px;
+    color: #A9A9A9;
+}
+
+.input-group{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding-top: 20px;
+}
+
+.input-group > input{
+    height: 46px;
+    border-color: #A9A9A9;
+    border-width: 1px;
+}
+
+.input-group > label > strong{
+    text-transform: capitalize;
+    font-size: 16px;
+    font-weight: 300;
+    color: black;
+}
+
+.input-group > select{
+    height: 46px;
+    border-color: #A9A9A9;
+    border-width: 1px;
+    font-size: 16px;
+    font-family: rubik;
+    text-transform: capitalize;
+}
+
+.button{
+    background-color: #FFF;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 50px;
+    padding-top: 10px;
+}
+
+.submit{
+    height: 46px;
+    width: 125px;
+    background-color: #FFF;
+    color: black;
+    border-radius: 5px;
+    border-color: black;
+    border-width: 2px;
+    font-family: rubik;
+    text-transform: uppercase;
+}
+
+.submit:hover{
+    background-color: rgb(21, 21, 21);
+    color:  #FFF;
+    border-color: #FFF;
 }
